@@ -18,23 +18,13 @@ export const notesReducer = (state = initialState, action) => {
 }
 
 export const saveNotes = () => async (dispatch, getState) => {
+  console.log(getState)
   const notes = getState().notes;
-  // await fetch("http://localhost:4000/notes", {
-  //   method: "POST",
-  //   headers: {
-  //     'Accept': 'application/json',
-  //     'Content-type': 'application/json'
-  //   },
-  //   body: JSON.stringify(notes)
-  // })
-
   localStorage.setItem('places', JSON.stringify(notes));
-  alert("Success")
+
 } 
 
 export const loadNotes = () => async (dispatch, getState) => {
-  const notes = JSON.parse(localStorage.getItem('places'));
-
-console.log(notes)
-  dispatch(setNotes(notes))
+   const notes = JSON.parse(localStorage.getItem('places'));
+   dispatch(setNotes(notes))
 } 
