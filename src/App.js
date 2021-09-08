@@ -24,7 +24,7 @@ function App() {
 
   
   };
-  // const YOUR_GOOGLE_MAPS_API_KEY="AIzaSyB_xff7D6Fa4ZyjQaLMuBsU6nrJLEEI3kI"
+ 
   const notes = useSelector((state) => state.notes);
   const dispatch = useDispatch();
   const onAddNote = value => {
